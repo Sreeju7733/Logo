@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+    <title>ThingsOfSoul - Logo Gallery</title>
+  
+    <style>
+      body {
+        background-color: #363636;
+        min-height: 100vh;
+        font: normal 16px sans-serif;
+        padding: 40px 0;
+      }
+
+      .container.gallery-container {
+        background-color: #202020;
+        color: #fff;
+		border-radius: 20px;
+        min-height: 100vh;
+      }
+
+      .gallery-container h3 {
+        text-align: center;
+        margin-top: 50px;
+        font-family: 'Kaushan Script', cursive;
+        font-weight: bold;
+      }
+
+      .gallery-container p.page-description {
+        text-align: justify;
+        margin: 25px auto;
+        font-size: 18px;
+		font-family: classy;
+        color: #999;
+      }
+
+      .tz-gallery {
+        padding: 10px;
+      }
+
+      /* Override bootstrap column paddings */
+      .tz-gallery .row>div {
+        padding: 2px;
+      }
+
+      .tz-gallery .lightbox img {
+        width: 100%;
+        border-radius: 0;
+        position: relative;
+      }
+
+      .tz-gallery .lightbox:before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -13px;
+        margin-left: -13px;
+        opacity: 0;
+        color: #fff;
+        font-size: 26px;
+        font-family: 'Kaushan Script', cursive;
+        content: '\e003';
+        pointer-events: none;
+        z-index: 9000;
+        transition: 0.4s;
+      }
+
+      .tz-gallery .lightbox:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba(46, 132, 206, 0.7);
+        content: '';
+        transition: 0.4s;
+      }
+
+      .tz-gallery .lightbox:hover:after,
+      .tz-gallery .lightbox:hover:before {
+        opacity: 1;
+      }
+
+      .baguetteBox-button {
+        background-color: transparent !important;
+      }
+
+      @media(max-width: 768px) {
+        body {
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container gallery-container">
+      <h3>ThingsOfSoul <br> Logo Gallery <br><br> <a href="#Disclaimer" style="font-size: 16px;">Disclaimer</a></h3>
+	  
+
+      <div class="tz-gallery">
+        <div class="row">
+          <!-- div class="col-sm-12 col-md-8">
+            <a class="lightbox" href="logos/1.jpg">
+              <img src="logos/1.jpg" alt="Bridge">
+            </a>
+          </div -->
+		  
+		<script>
+		for (let i = 1; i < 33; i++) {
+			document.write(`
+			<div class="col-sm-6 col-md-4" style="filter: drop-shadow(5px 5px 19px #000000);" loading="lazy">
+				<a class="lightbox" href="logo/${i}.jpg">
+					<img src="logo/${i}.jpg" alt="Park">
+				</a>
+			</div>
+			`);
+		}
+		</script>
+
+	  
+        </div>
+      </div>
+	  
+	  <p class="page-description text-center" id="Disclaimer">Disclaimer: The company names displayed alongside these logos are purely fictional and have been created for demonstration and showcase purposes only. Any resemblance to actual companies, brands, or trademarks is entirely coincidental. The logos themselves are the result of creative design and are not associated with any real entities. If you are interested in custom logo design for your business or organization, please consult with a professional design agency or designer to create a unique and distinctive brand identity that suits your specific needs.</p>
+	  
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run('.tz-gallery');
+    </script>
+  </body>
+</html>
